@@ -1,36 +1,50 @@
-Overview
-The YouTube Data Analysis Pipeline is built to handle and preprocess the trending YouTube data, making it ready for in-depth analysis. The dataset used in this project is available on Kaggle: Trending YouTube Statistics.
 
-YouTube Data Analysis Pipeline
+# YouTube Data Analysis Pipeline
+
 This repository contains a pipeline designed to clean and process trending YouTube statistics data, sourced from Kaggle, to facilitate further data analysis.
 
-Pipeline Architecture
+## Overview
+
+The YouTube Data Analysis Pipeline is built to handle and preprocess the trending YouTube data, making it ready for in-depth analysis. The dataset used in this project is available on Kaggle: [Trending YouTube Statistics](https://www.kaggle.com/datasets/datasnaek/youtube-new/data).
+
+## Pipeline Architecture
+
 The pipeline is designed to handle multiple stages of data processing, including:
 
-Data Ingestion:
+- **Data Ingestion**: 
+  - The majority of the data was initially in JSON format.
+  - Data was captured using AWS Glue Crawler, which automatically identified and cataloged the data structure.
 
-The majority of the data was initially in JSON format.
-Data was captured using AWS Glue Crawler, which automatically identified and cataloged the data structure.
-Automated Pipeline Trigger:
+- **Automated Pipeline Trigger**:
+  - An AWS Lambda function was created to automatically trigger the processing pipeline whenever new data is uploaded to the S3 landing data bucket.
 
-An AWS Lambda function was created to automatically trigger the processing pipeline whenever new data is uploaded to the S3 landing data bucket.
-Data Cleaning and Transformation:
+- **Data Cleaning and Transformation**:
+  - Two AWS Glue Studio jobs were created:
+    - The first job cleans the raw data.
+    - The second job converts the cleaned data from CSV format to Parquet format for optimized storage and querying.
+  - After cleaning and converting, the cleaned data is joined with the existing data to ensure consistency.
 
-Two AWS Glue Studio jobs were created:
-The first job cleans the raw data.
-The second job converts the cleaned data from CSV format to Parquet format for optimized storage and querying.
-After cleaning and converting, the cleaned data is joined with the existing data to ensure consistency.
-Data Validation:
+- **Data Validation**:
+  - The transformed and joined data was validated using Amazon Athena to ensure accuracy and consistency.
 
-The transformed and joined data was validated using Amazon Athena to ensure accuracy and consistency.
-Data Storage:
+- **Data Storage**:
+  - The final validated data is pushed into the Analytics and Report S3 bucket, where it is ready for further analysis and reporting.
 
-The final validated data is pushed into the Analytics and Report S3 bucket, where it is ready for further analysis and reporting.
-Data Visualization:
+- **Data Visualization**:
+  - An AWS QuickSight dashboard was generated to visualize the data stored in the Analysis and Report S3 bucket, providing insights and enabling further analysis.
 
-An AWS QuickSight dashboard was generated to visualize the data stored in the Analysis and Report S3 bucket, providing insights and enabling further analysis.
+![YouTube Data Pipeline Architecture](https://github.com/user-attachments/assets/a7c0a2be-68fc-4b98-b00c-39dd60b323e2)
 
-![alt text](<Youtube data pipeline architecture.jpeg>)
 
-Dataset
-The dataset used in this project contains various statistics on trending YouTube videos, including views, likes, comments, and more, across different regions. The data can be found here: Trending YouTube Statistics.
+
+## Dataset
+
+The dataset used in this project contains various statistics on trending YouTube videos, including views, likes, comments, and more, across different regions. The data can be found here: [Trending YouTube Statistics](https://www.kaggle.com/datasets/datasnaek/youtube-new/data).
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
