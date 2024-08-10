@@ -41,10 +41,3 @@ The pipeline is designed to handle multiple stages of data processing, including
 
 The dataset used in this project contains various statistics on trending YouTube videos, including views, likes, comments, and more, across different regions. The data can be found here: [Trending YouTube Statistics](https://www.kaggle.com/datasets/datasnaek/youtube-new/data).
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
