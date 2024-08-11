@@ -19,7 +19,7 @@ The pipeline is designed to handle multiple stages of data processing, including
   - An AWS Lambda function was created to automatically trigger the processing pipeline whenever new data is uploaded to the S3 landing data bucket.
 
 - **Data Cleaning and Transformation**:
-  - Two AWS Glue Studio jobs were created:
+  - Two AWS Glue Studio jobs using Pyspark were created:
     - The first job cleans the raw data.
     - The second job converts the cleaned data from CSV format to Parquet format for optimized storage and querying.
   - After cleaning and converting, the cleaned data is joined with the existing data to ensure consistency.
