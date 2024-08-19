@@ -33,7 +33,7 @@ The pipeline is designed to handle multiple stages of data processing that will 
 - **Data Visualization**:
   - A fully customizable AWS QuickSight dashboard is configured to automatically capture and visualize data from the Analysis and Report S3 bucket, where the processed data is stored. New data uploaded into the S3 landing data bucket triggers the pipeline, which updates the Analysis and Report S3 bucket, ensuring that data scientists and analysts have the most up-to-date information for their analysis.
 
-![YouTube Data Pipeline Architecture](https://github.com/user-attachments/assets/a7c0a2be-68fc-4b98-b00c-39dd60b323e2)
+![YouTube Data Pipeline Architecture](https://github.com/jmajety-lab/Youtube-data-analysis-pipeline/blob/8bd1a1fbccf83b6820f4ee223649ce9e6d74bcf8/Youtube%20data%20pipeline.jpeg)
 
 
 
